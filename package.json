@@ -1,0 +1,21 @@
+{
+  "name": "nsa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "gulp-css-scss": "^0.1.0",
+    "gulp-scss": "^1.4.0"
+  },
+  "devDependencies": {
+    "gulp-watch": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bootstrap": "node-sass --output-style expanded --precision 6 src/scss/bootstrap/bootstrap.scss src/scss/bootstrap.scss && node-sass --output-style expanded --precision 6 src/scss/bootstrap/bootstrap-grid.scss src/scss/bootstrap-grid.scss"
+  },
+  "author": "d1mmmk@gmail.com",
+  "license": "ISC"
+}

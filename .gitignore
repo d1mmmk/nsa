@@ -1,0 +1,6 @@
+.c9
+.git
+.gulp-scss-cache
+.sass-cache
+node_nodules
+dist
