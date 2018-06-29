@@ -10,9 +10,10 @@ var images = [src + '/images/*.*'];
 var wp = dist + '/wp-nsa';
 
 gulp.task('scss', function() {
-  return gulp.src(
-      src + '/scss/style.scss'
-    )
+  return gulp.src([
+      src + '/scss/style.scss',
+      src + '/scss/editor.scss'
+    ])
     .pipe(scss({
         // style: 'compressed'
     })).pipe(gulp.dest(dist));
@@ -53,9 +54,10 @@ gulp.task('wptheme', function() {
         .pipe(imagemin())
         .pipe(gulp.dest(wp+'/images'));
         
-    gulp.src(
-      src + '/scss/style.scss'
-    )
+    gulp.src([
+      src + '/scss/style.scss',
+      src + '/scss/editor.scss'
+    ])
     .pipe(scss({
         // style: 'compressed'
     })).pipe(gulp.dest(wp));

@@ -1,0 +1,6 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+.mceContentBody.wp-editor {     
+  background-color: $body-bg;
+  color: $body-color; 
+} 

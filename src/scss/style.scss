@@ -30,7 +30,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
     h1 {
-        font-size: 4rem;
+        font-size: 3.75rem;
         padding-bottom: 1rem;
         font-weight: 800;
         background: transparent url(images/line.png) 0 100% no-repeat;
@@ -99,8 +99,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
     &_logo {
-        @include media-breakpoint-up(md) {
-            min-width: 285px;
+        &-svg {
+            max-width: 255px;
         }
     }
     &_nav {
@@ -180,6 +180,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
             padding-top: 15px;
             margin-bottom: $spacer;
             font-weight: 800;
+            font-size: 1.4rem;
+            @include media-breakpoint-up(md) {
+                font-size: 1.75rem;
+            }
             &::before {
                 content: '';
                 position: absolute;
@@ -248,10 +252,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         &_list {
             position: relative;
             list-style: none; 
-            padding-left: 70px;
-            @include media-breakpoint-up(sm) {
-                padding-left: 120px;
-            }
+            padding: 0;
             @include media-breakpoint-up(lg) {
                 height: 970px;
                 width: 972px;
@@ -267,6 +268,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     &_rule {
         position: relative;
         margin: 40px 0;
+        padding-left: 70px;
         
         @include media-breakpoint-up(lg) {
             position: absolute;
@@ -288,14 +290,17 @@ Use it to make something cool, have fun, and share what you've learned with othe
             &:before {
                 @include sprite($rule-1);
                 top: -30px;
-                left: -110px;
+                left: -40px;
             }
         }
         &_2 {
             &:before {
                 @include sprite($rule-2);
                 top: -5px;
-                left: -135px;
+                left: -45px;
+                @include media-breakpoint-up(sm) {
+                    left: -65px;
+                }
             }
             @include media-breakpoint-up(lg) {
                 top: 290px;
@@ -307,7 +312,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
             &:before {
                 @include sprite($rule-3);
                 top: 0;
-                left: -135px;
+                left: -45px;
+                @include media-breakpoint-up(sm) {
+                    left: -65px;
+                }
             }
             @include media-breakpoint-up(lg) {
                 top: 520px;
@@ -324,6 +332,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
             border-radius: 50%;
             font-size: 1.5rem;
             padding: 50px 0;
+            display: block;
+            margin: 0 auto;
             &:after {
                 content: '';
                 position: absolute;
@@ -332,10 +342,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
                 width: 260px;
                 height: 50px;
                 background: radial-gradient(black, transparent 80%);
+                margin-top: -20px;
+                z-index: -1;
             }
             @include media-breakpoint-up(lg) {
                 top: 600px;
                 left: 610px;
+                margin: 0;
             }
         }
     }

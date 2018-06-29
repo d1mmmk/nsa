@@ -13,8 +13,10 @@
 	<div class="nsa">
 		<header class="nsa_header container">
 			<div class="row">
-				<div class="col-12 col-sm-4 text-center text-sm-left nsa_logo wow fadeIn">
-					<img src="<?php  echo get_template_directory_uri() . '/images/logo.png';?>" class="img-fluid" alt="">
+				<div class="col-12 col-sm-4 text-center text-sm-left wow fadeIn">
+					<object type="image/svg+xml" data="<?php  echo get_template_directory_uri() ;?>/images/logo.svg" class="nsa_logo nsa_logo-svg img-fluid">
+						<img src="<?php  echo get_template_directory_uri() ;?>/images/logo.png" class="nsa_logo img-fluid" alt="">
+					</object>
 				</div>
 				<div class="col text-center text-sm-left">
 					<nav class="nsa_nav wow fadeIn" data-wow-delay=".3s" data-wow-duration=".5s">

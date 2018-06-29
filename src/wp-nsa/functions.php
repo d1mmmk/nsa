@@ -14,7 +14,7 @@ function nsa_setup() {
 		'top'    => __( 'Top Menu', 'nsa' ),
 	) );
 	
-	add_editor_style( array( 'assets/css/editor-style.css', nsa_fonts_url() ) );
+	add_editor_style( array( 'editor.css', nsa_fonts_url() ) );
 
 }
 add_action( 'after_setup_theme', 'nsa_setup' );
