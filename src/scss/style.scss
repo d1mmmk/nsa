@@ -19,8 +19,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 //@import 'bootstrap/bootstrap-reboot';
 @import 'bootstrap/bootstrap';
 // @import 'bootstrap';
+@import 'glitch_sprite';
 .w300 { min-width: 300px; }
 .nsa {
+    @include media-breakpoint-down(sm){
+        font-size: $font-size-sm;
+    }
     a {
         color: inherit;
         text-decoration: none;
@@ -30,7 +34,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
     h1 {
-        font-size: 3.75rem;
+        font-size: 3.65rem;
         padding-bottom: 1rem;
         font-weight: 800;
         background: transparent url(images/line.png) 0 100% no-repeat;
@@ -40,7 +44,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     }
     h2 {
         font-weight: 800;
-        font-size: 3rem;
+        font-size: 2.75rem;
         @include media-breakpoint-up(sm) {
             font-size: 3.875rem;
         }
@@ -109,9 +113,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
         @include media-breakpoint-up(sm) {
             margin: 0;
         }
-        @include media-breakpoint-up(md) {
-            margin: 10px 0;
-        }
         &_list {
             font-weight: bold; 
             font-style: normal;
@@ -129,21 +130,23 @@ Use it to make something cool, have fun, and share what you've learned with othe
     &_promo {
         position: relative;
         margin: 80px 0 0;
-        height: 13rem;
+        height: 11rem;
         
+        @include media-breakpoint-up(sm) {height: 13rem;}
         @include media-breakpoint-up(md) {height: 17rem;}
         @include media-breakpoint-up(lg) {height: 25rem;}
         
         &_text {
             font-weight: 800;
             white-space: nowrap;
-            font-size: 5.75rem;
+            font-size: 4.75rem;
             line-height: 1;
             position: relative;
-            max-width: 930px;
+            max-width: 400px;
 
             @include media-breakpoint-up(sm) {
                 font-size: 6.25rem;
+                max-width: 930px;
             }
 
             @include media-breakpoint-up(md) {
@@ -156,10 +159,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
         &_image {
             position: absolute;
-            right: 7%;
+            left: 275px;
             bottom: 0;
-            width: 23%;
+            top: 0;
+            width: 21%;
             max-width: 232px;
+            min-width: 70px;
+            @include media-breakpoint-up(sm) {
+                right: 7%;
+                left: auto;
+            }
             img {
                 width: 100%;
             }

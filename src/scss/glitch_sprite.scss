@@ -1,0 +1,125 @@
+.glitch-head {
+	--glitch-width: 100%;
+	--glitch-nax-width: 223px;
+	--glitch-height: 100%;
+	--glitch-max-height: 418px;
+	--animation-duration: .425s;
+	--sprite-width: 218px;
+	--sprite-steps: 4;
+}
+
+.glitch {
+	position: absolute;
+	width: var(--glitch-width);
+	max-width: var(--glitch-max-width);
+	padding-bottom: 187.4439%;
+	overflow: hidden;
+	 -webkit-mask-position: 50% 0;
+	 mask-position: 50% 0;
+	 -webkit-mask-repeat: no-repeat;
+	 mask-repeat: no-repeat;
+	 -webkit-mask-size: cover;
+	 mask-size: cover;
+    .glitch__img {
+    	position: absolute;
+    	width: 100%;
+    	padding-bottom: 187.4439%;
+    	background-repeat: no-repeat;
+    	background-position: 50% 0;;
+    	background-size: cover;
+    	transform: translate3d(0,0,0);
+    	&:after {
+    		content: '';
+		    position: absolute;
+	    	width: 100%;
+	    	height: 0;
+	    	padding-bottom: 187.4439%;
+	        background-image: var(--sprite-image);
+	    	background-size: cover;
+	    	opacity: 0;
+		}
+    	&.animation {
+    		animation: glitch-empty var(--animation-duration) linear;
+	    	&:after {
+		    	animation: glitch-anim var(--animation-duration) steps(var(--sprite-steps));
+	    	}
+    	}
+    }
+    .glitch__eye {
+    	position: absolute;
+    	top: 31.5%;
+    	width: 3%;
+    	padding-bottom: 3%;
+		transform: rotate(+15deg);
+	 	opacity: 0;
+    	&_dot {
+    		position: absolute;
+    		top: 0;
+    		right: 0;
+    		bottom: 0;
+    		left: 0;
+	    	background: #fa17e2;
+			box-shadow: 0 0 2px 1px #ff0743;
+	    	border-radius: 50%;
+    	}
+    	&:before,
+    	&:after {
+    		content: '';
+    		position: absolute;
+    		width: 400%;
+		    left: -150%;
+    		top: 50%;
+    		box-shadow: 0 0 5px 2px #ff0743;
+    		z-index: -1;
+    	}
+    	&:after {
+    		transform: rotate(90deg);
+    	}
+    	&-left {
+    		left: 36%;
+    	}
+    	&-right {
+    		right: 35%;
+    	}
+    }
+    .glitch__eyes {
+    	&.animation {
+    		animation: glitch-empty 2.5s linear;
+	    	.glitch__eye {
+	    		animation: glitch-eye 2.5s linear;
+	    	}
+    	}
+    }
+}
+
+@keyframes glitch-anim {
+    from { background-position: 0; opacity: 1;}
+    to { background-position: calc(-100% * var(--sprite-steps)); }
+}
+
+@keyframes glitch-empty {
+	from { opacity: 1;}
+	to { opacity: 1;}
+}
+@keyframes glitch-eye {
+    0% { opacity: 0;}
+    40% { opacity: 0;}
+    50% { opacity: 1;}
+    55% {
+    	transform: rotate(+5deg); 
+    	width: 2%;
+    	padding-bottom: 2%;
+    }
+    60% { transform: rotate(+12deg);}
+    70% {
+    	width: 3%;
+    	padding-bottom: 3%;
+    }
+    80% { transform: rotate(+3deg);}
+    90% { 
+    	transform: rotate(+9deg);
+    	width: 2.5%;
+    	padding-bottom: 2.5%;
+    }
+    100% { transform: rotate(+15deg);}
+}

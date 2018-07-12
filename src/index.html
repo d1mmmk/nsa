@@ -55,7 +55,59 @@
 				<div class="nsa_promo ">
 					<div class="nsa_promo_text">
 						24-hour<br> digital
-						<div class="nsa_promo_image wow slideInRight" data-wow-duration="2s"><img src="images/head.gif" alt=""></div>
+						<div class="nsa_promo_image wow slideInRight glitch-head" data-wow-duration="2s">
+							<div class="glitch" style="--sprite-image: url('images/head-sprite.jpg'); -webkit-mask-image: url('images/head.png'); mask-image: url('images/head.png');">
+								<div class="glitch__img" style="background-image: url('images/head.png')">
+									<div class="glitch__eyes">
+										<div class="glitch__eye glitch__eye-left"><div class="glitch__eye_dot"></div></div><div class="glitch__eye glitch__eye-right"><div class="glitch__eye_dot"></div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+							(function(){
+								
+								var glitchHead = document.querySelector('.glitch-head'),
+									glitch = glitchHead.querySelector('.glitch__img'),
+									glitchEyes = glitchHead.querySelector('.glitch__eyes');
+									
+								var animations = [{
+										target: glitch,
+										timing: { min: 2, max: 6 }
+									},{
+										target: glitchEyes,
+										timing: { min: 1, max: 3 }
+									}];
+						
+								function glitchAmin(animation){
+									animation.target.classList.remove('animation');
+									clearTimeout(animation.to);
+									var timeout = Math.floor(Math.random() * animation.timing.max) + animation.timing.min;
+									animation.to = setTimeout(function() {
+										animation.target.classList.add(('animation'));
+									}, timeout * 1000);
+								};
+								animations.forEach(function(animation){
+									glitchAmin(animation);
+								});
+								window.onanimationend = function(event){
+									animations.forEach(function(animation){
+										if (event.target === animation.target) {
+											glitchAmin(animation);
+										}
+									});
+								}
+							})()
+						</script>
+						<!--div class="nsa_promo_image wow slideInRight glitch-head" data-wow-duration="2s">
+							<div class="glitch glitch--style-5" style="--animation-delay: 3s; -webkit-mask-image: url('images/head.png');mask-image: url('images/head.png');">
+								<div class="glitch__img" style="background-image: url('images/head.png')"></div>
+								<div class="glitch__img" style="background-image: url('images/head.png')"></div>
+								<div class="glitch__img" style="background-image: url('images/head.png')"></div>
+								<div class="glitch__img" style="background-image: url('images/head.png')"></div>
+								<div class="glitch__img" style="background-image: url('images/head.png')"></div>
+							</div>
+						</div-->
 					</div>
 				</div>
 				<p>
@@ -128,7 +180,7 @@
 					</li>
 					<li class="nsa_rule nsa_rule_more wow fadeIn">
 						Если мы вас<br> заинтересовали — <br> предлагаем начать<br> знакомство
-						<br> с <a href="#">небольшой формы</a>
+						<br> с <a href="#form">небольшой формы</a>
 					</li>
 				</ol>
 			</section>
@@ -180,7 +232,7 @@
 						<p>
 	    					г. Москва,<br>Кутузовский роспект, 36 стр.8
 						</p>
-						<form>
+						<form id="form">
 							<div class="form-group">
 								<input class="form-control" placeholder="Ваше имя" type="text" name="" />
 							</div>
@@ -214,6 +266,14 @@
 <script type="text/javascript">
 	(function() {
 		new WOW().init();
+		document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+		    anchor.addEventListener('click', function (e) {
+		        e.preventDefault();
+		        document.querySelector(this.getAttribute('href')).scrollIntoView({
+		            behavior: 'smooth'
+		        });
+		    });
+		});
 	})();
 </script>
 

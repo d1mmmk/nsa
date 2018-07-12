@@ -16,7 +16,7 @@ foreach ( $pages as $page ) {
 	$hide_title = get_post_meta($page->ID, 'hide_title', true);
 	$anchor = get_post_meta($page->ID, 'anchor', true);
 	?>
-	<section class="<?php echo $section_class ? $section_class : '';?>" id="<?php echo $anchor ? $anchor : '';?>">
+	<section class="<?php echo $section_class ? $section_class : '';?> wow fadeIn" id="<?php echo $anchor ? $anchor : '';?>">
 		<?php if(!$hide_title):?>
 		<h1><?php echo $title;?></h1>
 		<?php endif;?>
