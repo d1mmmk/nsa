@@ -132,8 +132,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
         margin: 80px 0 0;
         height: 11rem;
         
-        @include media-breakpoint-up(sm) {height: 13rem;}
-        @include media-breakpoint-up(md) {height: 17rem;}
+        @include media-breakpoint-up(sm) {height: 14rem;}
+        @include media-breakpoint-up(md) {height: 18rem;}
         @include media-breakpoint-up(lg) {height: 25rem;}
         
         &_text {
