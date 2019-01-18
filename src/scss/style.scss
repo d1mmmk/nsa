@@ -34,7 +34,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
     h1 {
-        font-size: 3.65rem;
+        font-size: 3.145rem;
         padding-bottom: 1rem;
         font-weight: 800;
         background: transparent url(images/line.png) 0 100% no-repeat;
@@ -189,7 +189,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
             padding-top: 15px;
             margin-bottom: $spacer;
             font-weight: 800;
-            font-size: 1.4rem;
+            font-size: 1.125rem;
+            @include media-breakpoint-up(sm) {
+                font-size: 1.4rem;
+            }
             @include media-breakpoint-up(md) {
                 font-size: 1.75rem;
             }
